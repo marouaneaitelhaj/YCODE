@@ -2,6 +2,17 @@
 
 include('connection.php');
 
+session_start();
+
+if(isset($_POST['submit'])){
+    $name=htmlspecialchars(strtolower(trim($_POST['name'])));
+    $pass=md5($_POST['password']);
+    $query = "INSERT INTO users(name,password)VALUE('$name','$pass')";
+
+    if(mysqli_query($connection,$query)){
+        echo "Bienvenue";
+    }
+}
 
 
 ?>
@@ -28,7 +39,7 @@ include('connection.php');
             </div>
             <div class="col-lg-7 text-center py-5">
               <h1>Welcome <span class="back">Back</span></h1>
-              <form action="check.php" method="POST">
+              <form action="index.php" method="POST">
                 <div class="form-row pt-3 pt-5">
                   <div class="offset-1 col-lg-10">
                      <input type="text" class="np px-3" name="name" placeholder="Username">

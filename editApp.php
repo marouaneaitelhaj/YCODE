@@ -48,6 +48,7 @@ include('index.php');
                                 ?>
 
 <form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
+                        <input type="hidden" name=app_id value="<?=$app['id_pr'];?>">
                         <div class="mb-3">
                             <label>Name</label>
                             <input type="text" value="<?=$app['nom'];?>" name="name" class="form-control">
@@ -88,7 +89,7 @@ include('index.php');
                             </select>
                         </div>
                         <div class="mb-3">
-                        <button type="submit" name="save-apprenant" class="btn btn-primary">Save Student</button>
+                        <button type="submit" name="update_Apprenant" class="btn btn-primary">updat Student</button>
                         </div>
                     </form>
 

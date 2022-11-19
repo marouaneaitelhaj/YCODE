@@ -34,15 +34,18 @@ echo $clubs;
 if(isset($_POST['update_Apprenant']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['app_id']);
-
-    $name=mysqli_real_escape_string($connection,$_POST['name']);
-    $secondname=mysqli_real_escape_string($connection,$_POST['secondname']);
-    $email=mysqli_real_escape_string($connection,$_POST['email']);
-    $photo=mysqli_real_escape_string($connection,$_POST['photo']["tmp_name"]);
-    $clubs=mysqli_real_escape_string($connection,$_POST['selectClub']);
     
+    
+    $name=mysqli_real_escape_string($connection,$_POST['name']);
+    $age=mysqli_real_escape_string($connection,$_POST['Age']);
+    $classe=mysqli_real_escape_string($connection,$_POST['Classroom']);
+    $role=mysqli_real_escape_string($connection,$_POST['rolee']);
+    $clubs=$_POST['selectClub'];
+    $newquery = "SELECT id FROM `club` WHERE nom = '$clubs'";
+    $result = mysqli_query($connection, $newquery);
+    $ids = mysqli_fetch_row($result);
 
-    $query = "UPDATE apprenants SET nom='$name', prenom='$secondname', email='$email',club='$clubs', photo='$photo'  WHERE id='$app_id' ";
+    $query = "UPDATE apprenant SET nom='$name',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr='$app_id' ";
 
     $query_run = mysqli_query($connection,$query);
     
@@ -66,7 +69,7 @@ if(isset($_POST['delete_App']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['delete_App']);
 
-    $query = "DELETE FROM apprenants WHERE id='$app_id' ";
+    $query = "DELETE FROM apprenant WHERE id_pr='$app_id' ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
