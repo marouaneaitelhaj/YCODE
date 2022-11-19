@@ -16,7 +16,7 @@
   <div class="main-content">
     <div>
             <h2>
-                <label id="sidebarCollapse" for=""><span class="las la-bars"></span></label> Dashboard
+                <label id="sidebarCollapse" for=""><span class="las la-bars"></span></label> YCODE
             </h2>
             </div>  
             <div class="search-wrapper">
