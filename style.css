@@ -203,3 +203,42 @@
   opacity: 1;
   visibility: visible;
 }
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+}
+
+.card-single{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2px;
+  width: 300px;
+  height: 400px;
+}
+
+.card-single  span{
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.card-single {
+  color: var(--text-gray);
+}
+.card-single:last-child{
+  background: var(--main-color);
+}
+.card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span{
+  color: black;
+}
+
+.howa{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

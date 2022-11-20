@@ -2,15 +2,7 @@
 
 include('connection.php');
 
-$user = mysqli_fetch_column(mysqli_query($connection, "SELECT user FROM `admin`"));
-
-$password = mysqli_query($connection, "SELECT pass  FROM `admin`");
-echo $user;
-
-if(isset($_POST['submit'])){
-    $name=($_POST['name']);
-    $pass=$_POST['password'];
-}
+session_start();
 
 
 ?>
@@ -33,11 +25,11 @@ if(isset($_POST['submit'])){
     <div class="contaner">
         <div class="row g-0"id="form-to">
             <div class="col-lg-5">
-                <img src="images/logo-youcode-ma.png">
+                <img src="images/youcode.jpg">
             </div>
             <div class="col-lg-7 text-center py-5">
               <h1>Welcome <span class="back">Back</span></h1>
-              <form action="" method="POST">
+              <form action="dashboard.php" method="POST">
                 <div class="form-row pt-3 pt-5">
                   <div class="offset-1 col-lg-10">
                      <input type="text" class="np px-3" name="name" placeholder="Username">
