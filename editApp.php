@@ -47,7 +47,7 @@ include('index.php');
                                 // print_r($app);
                                 ?>
 
-<form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
+<form action="indexApp.php?id = intval($_GET['id'])" method="POST" enctype="multipart/form-data"> 
                         <input type="hidden" name=app_id value="<?=$app['id_pr'];?>">
                         <div class="mb-3">
                             <label>Name</label>

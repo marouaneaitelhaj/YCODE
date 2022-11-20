@@ -67,7 +67,7 @@
                                                 <td>
                                                 
                                                     <a href="editApp.php?id=<?= $student['id_pr']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="indexApp.php" method="POST" class="d-inline">
+                                                    <form action="indexApp.php?id=<?= $student['id_pr']; ?>" method="POST" class="d-inline">
                                                         <button type="submit" name="delete_App" value="<?=$student['id_pr'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>

@@ -47,7 +47,7 @@ include('index.php');
                                 // print_r($app);
                                 ?>
 
-<form action="addclubdb.php" method="POST" enctype="multipart/form-data"> 
+<form action="" method="POST" enctype="multipart/form-data"> 
                         <div class="mb-3">
                             <label>Club Name</label>
                             <input type="text" value="<?=$app['nom'];?>" name="ClubName" class="form-control">
@@ -89,3 +89,18 @@ include('index.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<?php
+
+if(isset($_POST['club-edit'])){
+    $id = intval($_GET['id']);
+    $clubname = $_POST['ClubName'];
+    $date = $_POST['date'];
+    $ClubDescription = $_POST['ClubDescription'];
+    $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
+    $newquery = "UPDATE club SET nom = '$clubname',date = '$date',description = '$ClubDescription',logo = '$image' where id = $id";
+    mysqli_query($connection, $newquery);
+    header('Location: listappclub.php');
+}     
+
+?>

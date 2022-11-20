@@ -75,8 +75,8 @@ if(isset($_POST['update_Apprenant']))
     $newquery = "SELECT id FROM `club` WHERE nom = '$clubs'";
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
-
-    $query = "UPDATE apprenant SET nom='$name',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]'  ";
+    $id = intval($_GET['id_pr']);
+    $query = "UPDATE apprenant SET nom='$name',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]'  where id = $id ";
 
     $query_run = mysqli_query($connection,$query);
     
@@ -94,13 +94,30 @@ if(isset($_POST['update_Apprenant']))
     }
 }
 
+if(isset($_POST['update_Apprenant']))
+{
+    $id = intval($_GET['id']);
+    
+    
+    $name=mysqli_real_escape_string($connection,$_POST['name']);
+    $age=mysqli_real_escape_string($connection,$_POST['Age']);
+    $classe=mysqli_real_escape_string($connection,$_POST['Classroom']);
+    $role=mysqli_real_escape_string($connection,$_POST['rolee']);
+    $clubs=$_POST['selectClub'];
+    $newquery = "SELECT id FROM `club` WHERE nom = '$clubs'";
+    $result = mysqli_query($connection, $newquery);
+    $ids = mysqli_fetch_row($result);
 
+    $query = "UPDATE apprenant SET nom='$name',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr= $id ";
+
+    $query_run = mysqli_query($connection,$query);
+}
 
 if(isset($_POST['delete_App']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['delete_App']);
-
-    $query = "DELETE FROM apprenant ";
+    $id = intval($_GET['id']);
+    $query = "DELETE FROM apprenant where id_pr = $id ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
@@ -116,27 +133,30 @@ if(isset($_POST['delete_App']))
         exit(0);
     }
 }
-if(isset($_POST['delete_club']))
-{
-    $app_id = mysqli_real_escape_string($connection, $_POST['delete_club']);
 
-    $query = "DELETE FROM club";
-    $query_run = mysqli_query($connection, $query);
-
-    if($query_run)
-    {
-        echo "Student Deleted Successfully";
-        header("Location: listappclub.php");
-        exit(0);
-    }
-    else
-    {
-        echo "Student Not Deleted";
-        header("Location: listappclub.php");
-        exit(0);
-    }
-}
 
 
 
 ?>
+<?php
+    if(isset($_POST['delete_club']))
+    {
+        $app_id = mysqli_real_escape_string($connection, $_POST['delete_club']);
+        $id = intval($_GET['id']);
+        $query = "DELETE FROM club where id = $id";
+        $query_run = mysqli_query($connection, $query);
+    
+        if($query_run)
+        {
+            echo "Student Deleted Successfully";
+            header("Location: listappclub.php");
+            exit(0);
+        }
+        else
+        {
+            echo "Student Not Deleted";
+            header("Location: listappclub.php");
+            exit(0);
+        }
+    }
+    ?>
