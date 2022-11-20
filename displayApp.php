@@ -18,7 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Student CRUD</title>
 </head>
@@ -32,7 +31,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Student Details
-                            <a href="apprenants.php" class="btn btn-primary float-end">Add Students</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -43,7 +41,7 @@
                                     <th>Nom Apprenant</th>
                                     <th>Classroom</th>
                                     <th>Age</th>
-                                    <th>Photo</th>
+                                    <th>Role</th>
                                     <th>Action</th>
                                     <th>Club</th>
                                 </tr>
@@ -97,7 +95,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

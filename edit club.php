@@ -57,14 +57,14 @@ include('index.php');
                             <input type="text" value="<?=$app['description'];?>" name="ClubDescription" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Club Description</label>
+                            <label>Date</label>
                             <input type="date" value="<?=$app['date'];?>"  name="date" class="form-control">
                         </div>
                         
                         <div class="mb-3">
                             <label>Club Cover</label>
                             <!-- <img src="/images/youcode.jpg" name="photo"  class="form-control"> -->
-                            <input type="file" value="<?=$app['logo'];?>"name="clubcover" class="form-control">
+                            <input type="file" name="clubcover" class="form-control">
                         </div>
                         <div class="mb-3">
                         <button type="submit" name="club-edit" class="btn btn-primary">Add Club</button>

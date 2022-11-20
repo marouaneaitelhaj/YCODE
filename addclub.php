@@ -10,8 +10,7 @@ include('connection.php');
 <div class="row">
             <div class="col-md-12">
                 <div class="card-header">
-                    <h4>Student Add 
-                        <a href="indexApp.php" class="btn btn-danger float-end">BACK</a>
+                    <h4>Club Add 
                     </h4>
                 </div>
                 <div class="card-body">
@@ -22,7 +21,8 @@ include('connection.php');
                         </div>
                         <div class="mb-3">
                             <label>Club Description</label>
-                            <input type="text" name="ClubDescription" class="form-control">
+                            <textarea  name="ClubDescription" class="form-control">
+                            </textarea>
                         </div>
                         <div class="mb-3">
                             <label>Club Description</label>

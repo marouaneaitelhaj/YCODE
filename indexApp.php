@@ -120,7 +120,7 @@ if(isset($_POST['delete_club']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['delete_club']);
 
-    $query = "DELETE FROM club ";
+    $query = "DELETE FROM club";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)

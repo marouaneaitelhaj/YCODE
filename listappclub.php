@@ -10,20 +10,7 @@
 
 
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <title>Student CRUD</title>
-</head>
-<body>
-  
+<link rel="stylesheet" href="./style.css">
     <div class="container mt-4">
 
 
@@ -31,8 +18,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Details
-                            <a href="apprenants.php" class="btn btn-primary float-end">Add Students</a>
+                        <h4>Club Details
                         </h4>
                     </div>
                     <div class="card-body">
@@ -61,9 +47,7 @@
                                             <tr>
                                                 <td><?= $club['nom']; ?></td>
                                                 <td>
-                                                    <?php
-                                                    echo '<img src="data:image/jpg;base64,'.base64_encode($club['logo']).'">';
-                                                    ?>
+                                                <?php echo '<img style="width: 50px; height: 50px;" src="data:image/jpeg;base64,'.base64_encode($club['logo']).'"/>'; ?>
                                                 </td>
                                                 <td><?= $club['date']; ?></td>
                                                 <td><?= $club['description']; ?></td>
@@ -95,8 +79,4 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+    
