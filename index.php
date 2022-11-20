@@ -39,8 +39,8 @@
   <div class="py-4 px-3 mb-4">
     <div class="media d-flex align-items-center">
       <div class="media-body">
-        <h4 class="m-0 text-white">YOUCODE</h4>
-        <p class="font-weight-light text-muted mb-0">Gestion des club</p>
+        <h4 class="m-0 ges-text">YOUCODE</h4>
+        <p class="  text-white mb-0">Gestion des club</p>
       </div>
     </div>
   </div>

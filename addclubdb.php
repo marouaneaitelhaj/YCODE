@@ -14,7 +14,7 @@ if(isset($_POST['club-edit'])){
     $clubname = $_POST['ClubName'];
     $date = $_POST['date'];
     $ClubDescription = $_POST['ClubDescription'];
-    $image = $_FILES['clubcover']['tmp_name'];
+    $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
     $newquery = "UPDATE club SET nom = '$clubname',date = '$date',description = '$ClubDescription',logo = '$image'";
     mysqli_query($connection, $newquery);
     header('Location: listappclub.php');

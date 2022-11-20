@@ -6,9 +6,12 @@
     position: fixed;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
-    background-color: #65acc9;
+    background-color: #2A285B;
     margin-left: -17rem;
     z-index: 100;
+  }
+  td{
+    position: relative;
   }
   .container-x{
     display: grid;
@@ -96,7 +99,10 @@
     background-color: white;
   }
   li:hover a{
-    color: #599fd9;
+    color: #2A285B;
+  }
+  .ges-text{
+    color: #57BBF2;
   }
   a{
     color: white;
