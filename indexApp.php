@@ -138,25 +138,3 @@ if(isset($_POST['delete_App']))
 
 
 ?>
-<?php
-    if(isset($_POST['delete_club']))
-    {
-        $app_id = mysqli_real_escape_string($connection, $_POST['delete_club']);
-        $id = intval($_GET['id']);
-        $query = "DELETE FROM club where id = $id";
-        $query_run = mysqli_query($connection, $query);
-    
-        if($query_run)
-        {
-            echo "Student Deleted Successfully";
-            header("Location: listappclub.php");
-            exit(0);
-        }
-        else
-        {
-            echo "Student Not Deleted";
-            header("Location: listappclub.php");
-            exit(0);
-        }
-    }
-    ?>

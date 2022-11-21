@@ -56,7 +56,7 @@
                                                 
                                                     <a href="edit club.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                     
-                                                    <form action="indexApp.php?id=<?= $club['id']; ?>" method="POST" class="d-inline">
+                                                    <form action="addclubdb.php?id=<?= $club['id']; ?>" method="POST" class="d-inline">
                                                         <button type="submit" name="delete_club" value="<?=$club['id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
