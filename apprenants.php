@@ -21,7 +21,7 @@ include('connection.php');
         <div class="col-md-12">
             <div class="card-header">
                 <h4>Student Add
-                    <a href="indexApp.php" class="btn btn-danger float-end">BACK</a>
+                    
                 </h4>
             </div>
             <div class="card-body">
