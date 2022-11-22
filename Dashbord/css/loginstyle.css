@@ -1,0 +1,160 @@
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .row{
+    background: white;
+    border-radius: 90px;
+    width: 95%;
+    /* margin-left: 2rem;
+    margin-top: 3rem; */
+  }
+  
+  #form-to{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid rgb(0, 179, 255);
+    margin-left: 2rem;
+  }
+  
+  
+  img{
+    width: 800px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding-bottom: 3rem
+  }
+  
+  h1{
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  .np{
+    height: 50px;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 30px -11px rgba(0,0,0,0.75);
+  }
+  
+  .btn1{
+    height: 50px;
+    width: 50%;
+    border: none;
+    outline: none;
+    border-radius: 60px;
+    font-weight: 600;
+    background: #39a9d5;
+    color: white;
+  }
+  
+  .btn1:hover{
+   background: #26c4ec;
+   transition: 0.5s;
+  }
+  
+  .icon-fb{
+    font-size: 2.5rem;
+    color: rgb(39,39,192);
+  }
+  
+  
+  .icon-gl{
+    font-size: 2.5rem;
+    color: rgb(149, 192, 39);
+  }
+  
+  p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+  }
+  
+  .container .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .back{
+    color: #39a9d5;
+  }
+  
+  @media screen and (max-width:600px){
+        
+    img{
+        width: 400px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        margin-top: 3rem;
+    }
+    #form-to{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 2rem; */
+        border: 1px solid rgb(0, 179, 255);
+        /* margin-left: 2rem; */
+        margin: 1rem;
+    }
+    
+  }
+  
+  
+  @media screen and (min-width:600px) and (max-width:900px){
+        
+    img{
+        width: 800px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        margin-top: 3rem;
+    }
+    #form-to{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 2rem; */
+        border: 1px solid rgb(0, 179, 255);
+        /* margin-left: 2rem; */
+        margin: 1rem;
+    }
+    
+  }
+  

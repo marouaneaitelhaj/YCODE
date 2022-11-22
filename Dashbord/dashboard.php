@@ -3,6 +3,9 @@
 <?php
      
      session_start();
+    if (!isset($_SESSION['sid'])){
+        header('location: login.php');
+    }
      include ('index.php');
      include  ('connection.php');
 ?>
@@ -11,7 +14,7 @@
         <main>
             <center><h1>Welcome To You<span id="code">Code</span> Clubs</h1></center> 
             <div class="cards">
-                <div class="card-single">
+                <div class="card-single card-dash">
                     <div>
                         <h1><?php 
                             
@@ -23,7 +26,7 @@
                              
                             ?>
                         </h1>
-                        <span>Apprenants</span>
+                        <span id="title-dash">Apprenants</span>
                     </div>
                     <div>
                         <span class="las la-users"></span>
@@ -31,7 +34,7 @@
                 </div>
 
             
-                <div class="card-single">
+                <div class="card-single card-dash">
                     <div>
                         <h1><?php 
                             
@@ -43,7 +46,7 @@
                              
                             ?>
                         </h1>
-                        <span>clubs</span>
+                        <span id="title-dash">clubs</span>
                     </div>
                     <div>
                         <span class="las la-clipboard-list"></span>
@@ -55,3 +58,9 @@
                     
             </div>
         </main>
+
+        <?php
+
+        include('footer.php');
+
+        ?>

@@ -2,6 +2,9 @@
 <?php
     
     session_start();
+    if (!isset($_SESSION['sid'])){
+        header('location: login.php');
+    }
 
     require  'connection.php';
     include_once('index.php');
@@ -10,9 +13,8 @@
 
 
 ?>
-<link rel="stylesheet" href="./style.css">
-    <div class="container mt-4">
 
+    <div class="container mt-4">
 
         <div class="row">
             <div class="col-md-12">
@@ -26,18 +28,21 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    
                                     <th>Nom Club</th>
                                     <th>Logo</th>
                                     <th>Date</th>
                                     <th>Description</th>
+                                    <th>Membres</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $query = "SELECT * from club";
+                                    $query = "SELECT c.id,c.nom,c.date,c.description,c.logo,COUNT(a.id_pr) as members from club c left join apprenant a on c.id = a.id_fr group by c.id";
+                                    // $query="SELECT * FROM club";
                                     $query_run = mysqli_query($connection, $query);
-                                    $_SESSION['count'] = mysqli_num_rows($query_run);
-                                    
+                                                 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
                                         foreach($query_run as $club)
@@ -47,17 +52,18 @@
                                             <tr>
                                                 <td><?= $club['nom']; ?></td>
                                                 <td>
-                                                <?php echo '<img style="width: 50px; height: 50px;" src="data:image/jpeg;base64,'.base64_encode($club['logo']).'"/>'; ?>
+                                                <?php echo '<img   style="width: 80px; height: 80px; border-radius: 50px;" src="data:image/jpeg;base64,'.base64_encode($club['logo']).'"/>'; ?>
                                                 </td>
                                                 <td><?= $club['date']; ?></td>
-                                                <td><?= $club['description']; ?></td>
-                                                <?php  $id  = $club['id'] ; ?>
+                                                <!-- <td><?= $club['description']; ?></td> -->
+                                                <td class="club-desc" title='<?php echo $club['description']?>'><?php echo $club['description']?></td>
+
+                                                <td> <?= $club['members']; ?></td>     
                                                 <td>
-                                                
-                                                    <a href="edit club.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    
-                                                    <form action="addclubdb.php?id=<?= $club['id']; ?>" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_club" value="<?=$club['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                <a href="members.php?id=<?= $club['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="editclub.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="indexClub.php" method="POST" class="d-inline">
+                                                        <button type="submit" value="<?=$club['id'];?>"  name="delete_club" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -79,4 +85,9 @@
             </div>
         </div>
     </div>
+
+
+    <?php
+    include('footer.php');
+    ?>
     

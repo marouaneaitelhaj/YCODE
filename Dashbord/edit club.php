@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['sid'])){
+    header('location: login.php');
+}
 include('connection.php');
 include('index.php');
 
@@ -47,7 +50,7 @@ include('index.php');
                                 // print_r($app);
                                 ?>
 
-<form action="addclubdb.php?id = intval($_GET['id'])" method="POST" enctype="multipart/form-data"> 
+<form action="addclubdb.php" method="POST" enctype="multipart/form-data"> 
                         <div class="mb-3">
                             <label>Club Name</label>
                             <input type="text" value="<?=$app['nom'];?>" name="ClubName" class="form-control">
@@ -57,14 +60,14 @@ include('index.php');
                             <input type="text" value="<?=$app['description'];?>" name="ClubDescription" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Date</label>
+                            <label>Club Description</label>
                             <input type="date" value="<?=$app['date'];?>"  name="date" class="form-control">
                         </div>
                         
                         <div class="mb-3">
                             <label>Club Cover</label>
                             <!-- <img src="/images/youcode.jpg" name="photo"  class="form-control"> -->
-                            <input type="file" name="clubcover" class="form-control">
+                            <input type="file" value="<?=$app['logo'];?>"name="clubcover" class="form-control">
                         </div>
                         <div class="mb-3">
                         <button type="submit" name="club-edit" class="btn btn-primary">Add Club</button>
@@ -89,4 +92,3 @@ include('index.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
