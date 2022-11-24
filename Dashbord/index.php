@@ -41,7 +41,7 @@
     <div class="media d-flex align-items-center">
       <div class="media-body">
         <h4 class="m-0 text-white las la-laptop-code">YouCode</h4>
-        <p class="font-weight-light text-muted mb-0">Gestion des club</p>
+        <p class="font-weight-light font-weight-normal mb-0">Gestion des club</p>
       </div>
     </div>
   </div>

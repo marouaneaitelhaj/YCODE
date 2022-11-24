@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && (!empty($_POST['name'])) && (!empty($_POST['passw
         header('location: dashboard.php');
       } else{
             echo '<script> cleartext(); </script>';
-            
+            $errorr = "The password or username is incorrect";
           }
         
       
@@ -56,6 +56,7 @@ if (isset($_POST['submit']) && (!empty($_POST['name'])) && (!empty($_POST['passw
             </div>
             <div class="col-lg-7 text-center py-5">
               <h1>Welcome <span class="back">Back</span></h1>
+              
               <form action="" method="POST">
                 <div class="form-row pt-3 pt-5">
                   <div class="offset-1 col-lg-10">
@@ -74,9 +75,7 @@ if (isset($_POST['submit']) && (!empty($_POST['name'])) && (!empty($_POST['passw
                 </div>
 
               </form>
-              <p>Or Login With</p>
-              <span class="icon-fb"><ion-icon name="logo-facebook"></ion-icon></span>
-              <span class="icon-gl"><ion-icon name="logo-google"></ion-icon></span>
+              
             </div>
         </div>
     </div>

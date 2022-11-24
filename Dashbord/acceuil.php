@@ -2,8 +2,12 @@
 <?php
     require  'connection.php';
     
- 
-    include_once('header.php');
+    session_start();
+    if (!isset($_SESSION['sid'])){
+        include_once('headerlogin.php');
+    }else{
+        include_once('headerlogout.php');   
+    }
 
 
 ?>
@@ -52,3 +56,8 @@
 
 </html>
 
+<?php
+   
+   include('footer.php');
+
+?>

@@ -1,14 +1,10 @@
-$(function() {
-    // Sidebar toggle behavior
-    $('#sidebarCollapse').on('click', function() {
-      $('#sidebar, #content,#overlayy').toggleClass('active');
-    });
-  }
-  );
-  $(function() {
-    // Sidebar toggle behavior
-    $('#overlayy').on('click', function() {
-      $('#sidebar, #content,#overlayy').toggleClass('active');
-    });
-  }
-  );
+document.querySelector("#sidebarCollapse").addEventListener("click", function(){
+  document.querySelector("#sidebar").classList.toggle('active');
+  document.querySelector("#content").classList.toggle('active');
+  document.querySelector("#overlayy").classList.toggle('active');
+})
+document.querySelector("#overlayy").addEventListener("click", function(){
+  document.querySelector("#sidebar").classList.toggle('active');
+  document.querySelector("#content").classList.toggle('active');
+  document.querySelector("#overlayy").classList.toggle('active');
+})

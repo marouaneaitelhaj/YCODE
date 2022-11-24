@@ -59,10 +59,7 @@ include('index.php');
                             <label>Club Description</label>
                             <input type="text" value="<?=$app['description'];?>" name="ClubDescription" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label>Club Description</label>
-                            <input type="date" value="<?=$app['date'];?>"  name="date" class="form-control">
-                        </div>
+                        
                         
                         <div class="mb-3">
                             <label>Club Cover</label>
