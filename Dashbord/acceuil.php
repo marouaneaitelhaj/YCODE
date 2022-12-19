@@ -24,7 +24,7 @@
                     foreach($query_run as $club){
 
                         ?>
-                            <div class="card">
+                            <div class="card-x">
                             <img class="card-img-top"  src="<?= 'data:image/jpeg;base64,'.base64_encode($club['logo'])?>"/>
                                 <div class="card-body">
                                 <center><h5 class="card-title"><?= $club['nom']; ?></h5></center>

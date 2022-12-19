@@ -6,10 +6,6 @@ if (!isset($_SESSION['sid'])){
 include_once('index.php');
 include('connection.php');
 
-$arr = ["1", "2", "3"];
-for ($i = 0, i < count($arr); $i++){
-    echo $arr[$i];
-}
 
 ?>
 
@@ -46,12 +42,10 @@ for ($i = 0, i < count($arr); $i++){
                     </div>
                     <div class="mb-3">
                         <label class="text-label">Classroom</label>
-                        <select name="Classroom" class="form-control" required>
-                            <option value="">--Please choose an option--</option>
+                        <select name="Classroom" value="5" class="form-control" required>
                             <option value="Ada Lovelace">Ada Lovelace</option>
-                            <option value="">hhhhh</option>
-                            <option value="">dgdfdret</option>
-                            <option value="">gdfdrete</option>
+                            <option value="Alan Turing">Alan Turing</option>
+                            <option value="MARGARET HAMILTON">MARGARET HAMILTON</option>
                         </select>
                     </div>
                     <div class="mb-3">

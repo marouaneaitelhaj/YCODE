@@ -59,7 +59,7 @@ include('index.php');
                         </div>
                         <div class="mb-3">
                             <label>Club Description</label>
-                            <textarea type="text" value="<?=$clb['description'];?>" name="ClubDescription" class="form-control"></textarea>
+                            <textarea type="text" value="" name="ClubDescription" class="form-control"><?=$clb['description'];?></textarea>
                         </div>
                         <div class="mb-3">
                             <label>Date</label>

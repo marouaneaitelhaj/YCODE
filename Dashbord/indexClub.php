@@ -16,6 +16,7 @@ if(isset($_POST['club-add'])){
     $date = $dateTime;
     $ClubDescription = $_POST['ClubDescription'];
     $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
+    
     $newquery = "INSERT INTO club (nom, date, description, logo)
     VALUE('$clubname','$date','$ClubDescription','$image')";
     mysqli_query($connection, $newquery);
@@ -32,7 +33,11 @@ if(isset($_POST['club-edit'])){
     $date = $_POST['date'];
     $ClubDescription = $_POST['ClubDescription'];
     $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
+    if($_FILES['clubcover']['size'] == 0) {
+    $newquery = "UPDATE club SET nom = '$clubname',date = '$date',description = '$ClubDescription' where id = $clb_id ";
+}else{
     $newquery = "UPDATE club SET nom = '$clubname',date = '$date',description = '$ClubDescription',logo = '$image' where id = $clb_id ";
+}
 
     mysqli_query($connection, $newquery);
     header('Location: displayClub.php');

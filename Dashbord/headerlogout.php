@@ -31,6 +31,9 @@
 
             <a href="logout.php"  class="d-inline">
                 <button type="submit" class="btn btn-outline-primary me-2">Logout</button>
+</a>        
+<a href="dashboard.php"  class="d-inline">
+                <button type="submit" class="btn btn-outline-primary me-2">Home</button>
 </a>
         </div>
   </div>

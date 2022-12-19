@@ -58,7 +58,7 @@ include('index.php');
                         </div>
                         <div class="mb-3">
                         <label class="text-label">Photo</label>
-                        <input type="file"  name="clubcover" class="form-control" required>
+                        <input type="file"  name="clubcover" class="form-control">
                     </div>
                         <div class="mb-3">
                             <label>Age</label>
@@ -66,17 +66,17 @@ include('index.php');
                         </div>
                         <div class="mb-3">
                             <label>Classroom</label>
-                            <select name="Classroom" class="form-control" required>
-                            <option value="">--Please choose an option--</option>
+                            <select name="Classroom" value="<?=$app['classe'];?>"  class="form-control" required>
+                            <option hidden selected value="<?= $app['classe']; ?>"><?php echo $app['classe'];?></option>
                             <option value="Ada Lovelace">Ada Lovelace</option>
-                            <option value="">hhhhh</option>
-                            <option value="">dgdfdret</option>
-                            <option value="">gdfdrete</option>
+                            <option value="Alan Turing">Alan Turing</option>
+                            <option value="MARGARET HAMILTON">MARGARET HAMILTON</option>
                             </select>
                         </div>
                         <div class="mb-3">
                         <label>role</label>
                             <select name="rolee" id="" class="form-control">
+                            <option hidden selected value="<?= $app['role']; ?>"><?php echo $app['role'];?></option>
                                 <option value="member">member</option>
                                 <option value="president">president</option>
                             </select>
@@ -84,6 +84,12 @@ include('index.php');
                         <div class="mb-3">
                             <label>Choisir un club</label>
                             <select name="selectClub" class="form-control">
+                            <?php  $id_fr  = $app['id_fr'] ; ?>
+                                                
+                                                <?php
+                                                $sqlresult = mysqli_fetch_row(mysqli_query($connection, "SELECT nom FROM `club` WHERE id = $id_fr;"));
+                                                ?>
+                            <option hidden selected value="<?= $sqlresult[0]; ?>"><?php echo $sqlresult[0];?></option>
                                 <?php
                                     $result = mysqli_query($connection, "SELECT nom FROM club;");
                                     while ($tables = mysqli_fetch_row($result)){

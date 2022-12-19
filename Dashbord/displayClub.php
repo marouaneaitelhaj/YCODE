@@ -33,7 +33,6 @@
                                     <th>Logo</th>
                                     <th>Date</th>
                                     <th>Description</th>
-                                    <th>Membres</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -56,9 +55,7 @@
                                                 </td>
                                                 <td><?= $club['date']; ?></td>
                                                 <!-- <td><?= $club['description']; ?></td> -->
-                                                <td class="club-desc" title='<?php echo $club['description']?>'><?php echo $club['description']?></td>
-
-                                                <td> <?= $club['members']; ?></td>     
+                                                <td class="club-desc" title='<?php echo $club['description']?>'><?php echo $club['description']?></td>     
                                                 <td>
                                                 <a href="members.php?id=<?= $club['id']; ?>" class="btn btn-info btn-sm">View</a>
                                                     <a href="editclub.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>

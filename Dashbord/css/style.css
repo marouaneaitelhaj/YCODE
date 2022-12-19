@@ -277,15 +277,19 @@
 }
 
 .card-img-top{
-  width: 640px;
-  height: 450px;
   object-fit: cover;
+  width: 333px;
+  height: 222px;
+}
+
+.card-x{
+  margin-bottom: 1rem;
+  width: 30%;
 }
 
 .card{
   margin-bottom: 1rem;
 }
-
 #code{
   color: rgb(0, 191, 255);
 }
@@ -304,12 +308,15 @@ div.container{
 } */
 
 main{
-  height: 80vh;
+  height: 100vh;
 }
 /* 
 div.cont-howa{
   height: 600vh !important;
 } */
+.cont-howa{
+  justify-content: space-around;
+}
 footer{
   margin-top: 5%;
   bottom: 0;

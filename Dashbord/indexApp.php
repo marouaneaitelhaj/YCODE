@@ -17,10 +17,8 @@ if(isset($_POST['save-apprenant'])){
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
     $rolee=$_POST['rolee'];
-
     $query = "INSERT INTO apprenant (nom,photo, classe, age, role,id_fr)
     VALUE('$name' ,'$image', '$class', '$age', '$rolee', '$ids[0]')";
-
 $query_run = mysqli_query($connection,$query);
 if($query_run){
     // echo "Student Created Successfully";
@@ -47,8 +45,11 @@ if(isset($_POST['update_Apprenant']))
     $newquery = "SELECT id FROM `club` WHERE nom = '$clubs'";
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
-
+    if ($_FILES["clubcover"]["size"] == 0) {
+    $query = "UPDATE apprenant SET nom='$name', classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr='$app_id' ";
+}else{
     $query = "UPDATE apprenant SET nom='$name',photo='$image',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr='$app_id' ";
+}
 
     $query_run = mysqli_query($connection,$query);
     
@@ -143,10 +144,3 @@ if(isset($_POST['delete_App']))
         exit(0);
     }
 }
-
-
-
-?>
-
-
-
