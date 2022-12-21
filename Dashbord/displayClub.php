@@ -57,7 +57,6 @@
                                                 <!-- <td><?= $club['description']; ?></td> -->
                                                 <td class="club-desc" title='<?php echo $club['description']?>'><?php echo $club['description']?></td>     
                                                 <td>
-                                                <a href="members.php?id=<?= $club['id']; ?>" class="btn btn-info btn-sm">View</a>
                                                     <a href="editclub.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                     <form action="indexClub.php" method="POST" class="d-inline">
                                                         <button type="submit" value="<?=$club['id'];?>"  name="delete_club" class="btn btn-danger btn-sm">Delete</button>
